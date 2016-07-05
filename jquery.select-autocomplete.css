@@ -1,0 +1,51 @@
+.select-autocomplete {
+    position: relative;
+    width: 100px;
+}
+
+.select-autocomplete input {
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.select-autocomplete .dropdown {
+    background: #fff;
+    border: 1px solid gray;
+    color: #333;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.select-autocomplete ul {
+    overflow: auto;
+    max-height: 90px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.select-autocomplete li {
+    cursor: pointer;
+    line-height: 18px;
+    list-style: none;
+}
+
+.select-autocomplete li:hover, .select-autocomplete li.selected {
+    background-color: #f2f1f1;
+    color: #555555;
+}
+
+.select-autocomplete button {
+    background: #fff;
+    border: 0;
+    cursor: pointer;
+    outline:none;
+    padding: 3px 0;
+    width: 100%;
+}
+
+.select-autocomplete button:hover {
+    color: #555555;
+}
