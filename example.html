@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title></title>
+    <link href="jquery.select-autocomplete.css" rel="stylesheet" type="text/css">
+    <style>
+      .wrap {
+        margin: 0 auto;
+        width: 200px;
+      }
+
+      #destroy-btn {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <input id="autocomplete" />
+      <button id="destroy-btn" onclick="destroy()">Destroy select</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.8.0.js"
+            integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs="
+            crossorigin="anonymous"></script>
+    <script src="jquery.select-autocomplete.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#autocomplete").selectAutocomplete({
+          showCancelButton: true,
+          cancelButtonText: "Remove",
+          data: [
+            { id: "id111", name: "1111" },
+            { id: "id222", name: "2222" },
+            { id: "id333", name: "3333" },
+            { id: "id444", name: "4444" },
+            { id: "id555", name: "5555" },
+            { id: "id666", name: "6666" },
+            { id: "id777", name: "7777" },
+            { id: "id888", name: "8888" },
+            { id: "id999", name: "9999" }
+          ],
+          minLength: 3,
+          onSelect: function(e, id, value) {
+            console.log("Item selected! Id: " + id);
+          },
+          onCancel: function (e) {
+            console.log("Cancel button clicked!");
+          }
+        });
+      });
+
+      function destroy() {
+        $("input").selectAutocomplete('destroy');
+      }
+    </script>
+  </body>
+</html>
