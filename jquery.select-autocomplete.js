@@ -3,7 +3,7 @@
  *
  * Author:       Arthur Mironov
  * Created:      July 5th 2016
- * Last Updated: July 5th 2016
+ * Last Updated: July 7th 2016
  * Version:      1.0.1
  * Licence:      Autocomplete is licenced under MIT licence (http://opensource.org/licenses/MIT)
  * GitHub:       https://github.com/art-mironoff/jQuery-selectAutocomplete
@@ -44,10 +44,7 @@ if (typeof Object.create !== "function") {
             this.$input = $(elem);
             var wrapper = $("<div/>", { attr: this.config.wrapperAttrs });
             this.$wrap = this.$input.wrap(wrapper).parent();
-            var dropdown = $("<div/>", {
-                attr: this.config.dropdownAttrs,
-                style: "top: " + (this.$input.outerHeight(true) - 1)  + "px"
-            });
+            var dropdown = $("<div/>", { attr: this.config.dropdownAttrs });
             this.$dropdown = this.$wrap.append(dropdown).children('div');
             this.$ul = this.$dropdown.append("<ul/>").children("ul");
             if (this.config.showCancelButton) {
@@ -136,6 +133,7 @@ if (typeof Object.create !== "function") {
 
         onCancelClick: function(e) {
             this.$input.val("");
+            this.updateDropdown("");
             this.config.onCancel(e);
         }
     };
