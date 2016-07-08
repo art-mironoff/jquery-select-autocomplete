@@ -34,5 +34,5 @@ $("#autocomplete").selectAutocomplete({
 ```
 
 ```html
-<input id="autocomplete" />
+<input id="autocomplete" type="text" name="search" />
 ```
