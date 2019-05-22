@@ -6,6 +6,9 @@ A lightweight completion suggester plugin for jQuery.
 Compatible with jQuery 1.8.0+. No dependencies except the jQuery library.
 Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 
+# Example
+https://art-mironoff.github.io/jQuery-selectAutocomplete/example.html
+
 # Usage
 
 ```javascript
