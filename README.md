@@ -17,25 +17,35 @@ var data = [
   { id: "2", name: "AppleScript" },
   { id: "3", name: "Asp" }
 ];
+
 $("#autocomplete").selectAutocomplete({
-  // Available options with defaults:
-  cancelButtonText: "Remove",
-  data: data,
-  dropdownAttrs: {
-    class: "dropdown"
-  },
-  minLength: 3,
-  onSelect: function(e, id, value) {
-  },
-  onCancel: function (e) {
-  },
-  showCancelButton: true,
-  wrapperAttrs: {
-    class: "select-autocomplete"
-  }
+  data: data
 });
 ```
 
 ```html
 <input id="autocomplete" type="text" name="search" />
+```
+
+# Props
+| Key              | Default                          | Type   |
+|------------------|----------------------------------|----------|
+| cancelButtonText | "Remove"                         | String   |
+| data             | [ ]                              | Array    |
+| dropdownAttrs    | { class: "dropdown" }            | Object   |
+| minLength        | 3                                | Integer  |
+| onSelect         | function { }                     | Function |
+| onCancel         | function { }                     | Function |
+| showCancelButton | true                             | Boolean  |
+| wrapperAttrs     | { class: "select-autocomplete" } | Object   |
+
+To specify settings after the init, use this syntax:
+```javascript
+$("#autocomplete").selectAutocomplete({
+  cancelButtonText: "Remove",
+  data: [],
+  dropdownAttrs: {
+    class: "dropdown"
+  }
+});
 ```
